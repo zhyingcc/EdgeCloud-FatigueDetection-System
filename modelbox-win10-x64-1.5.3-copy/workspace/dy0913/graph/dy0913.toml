@@ -1,0 +1,35 @@
+# Copyright (C) 2020 Huawei Technologies Co., Ltd. All rights reserved.
+
+[driver]
+dir = [
+    "${HILENS_APP_ROOT}/etc/flowunit",
+    "${HILENS_APP_ROOT}/etc/flowunit/cpp",
+    "${HILENS_APP_ROOT}/model",
+    "${HILENS_MB_SDK_PATH}/flowunit",
+]
+skip-default = true
+
+[profile]
+profile = false
+trace = false
+dir = "${HILENS_DATA_DIR}/mb_profile"
+
+[graph]
+format = "graphviz"
+graphconf = """digraph dy0913 {
+    node [shape=Mrecord]
+    queue_size = 4
+    batch_size = 1
+
+
+    input1[type=input,flowunit=input,device=cpu,deviceid=0]
+    dy[type=flowunit, flowunit=dy, device=cpu] # 自定义的功能模块
+    output1[type=output,flowunit=output,device=cpu]
+
+    input1:input -> dy:in_1
+    dy:out_1 -> output1:in_data
+
+}"""
+
+[flow]
+desc = "dy0913 run in modelbox-win10-x64"

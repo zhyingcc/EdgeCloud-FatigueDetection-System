@@ -1,0 +1,24 @@
+{
+  "auth": {
+    "identity": {
+      "methods": [
+        "password"
+      ],
+      "password": {
+        "user": {
+          "domain": {
+            "name": "hid_eb2gnxs55yqdnn_"
+          },
+          "name": "Czq",
+          "password": "darling.czq2002"
+        }
+      }
+    },
+    "scope": {
+      "project": {
+        "name": "cn-north-4"
+      }
+    }
+  }
+}
+

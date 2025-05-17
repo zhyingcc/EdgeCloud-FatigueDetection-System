@@ -1,0 +1,49 @@
+# Copyright (c) Huawei Technologies Co., Ltd. 2022. All rights reserved.
+
+[driver]
+dir = ["${HILENS_APP_ROOT}/etc/flowunit",
+"${HILENS_APP_ROOT}/etc/flowunit/cpp",
+"${HILENS_APP_ROOT}/model",
+"${HILENS_MB_SDK_PATH}/flowunit"]
+skip-default = true
+[profile]
+profile=false
+trace=false
+dir="${HILENS_DATA_DIR}/mb_profile"
+[graph]
+format = "graphviz"
+graphconf = """digraph MODULENAME_multi {
+    node [shape=Mrecord]
+    queue_size = 2
+    batch_size = 2
+    input1[type=input,flowunit=input,device=cpu,deviceid=0]
+    
+    data_source_parser[type=flowunit, flowunit=data_source_parser, device=cpu, deviceid=0]
+    url_cfg[type=flowunit, flowunit=url_cfg, device=cpu, deviceid=0]
+    video_demuxer[type=flowunit, flowunit=video_demuxer, device=cpu, deviceid=0]
+    video_decoder[type=flowunit, flowunit=video_decoder, device=cpu, deviceid=0, pix_fmt=rgb]
+    image_resize[type=flowunit, flowunit=resize, device=cpu, deviceid=0, image_width=512, image_height=288]
+    image_transpose[type=flowunit, flowunit=packed_planar_transpose, device=cpu, deviceid=0]
+    normalize[type=flowunit, flowunit=normalize, device=cpu, deviceid=0, standard_deviation_inverse="1,1,1"]
+    car_detection[type=flowunit, flowunit=yolox_infer, device=cpu, deviceid=0, batch_size = 1]
+    yolox_post[type=flowunit, flowunit=yolox_post, device=cpu, deviceid=0]
+    image_resize_out[type=flowunit, flowunit=resize, device=cpu, deviceid=0, image_width=640, image_height=360]
+    draw_car_bbox[type=flowunit, flowunit=draw_car_bbox_multi, device=cpu, deviceid=0]
+    video_out[type=flowunit, flowunit=video_out, device=cpu, deviceid=0, full_screen=true]
+    
+    input1:input -> data_source_parser:in_data
+    data_source_parser:out_video_url -> url_cfg:in_1
+    url_cfg:out_1 -> video_demuxer:in_video_url
+    video_demuxer:out_video_packet -> video_decoder:in_video_packet
+    video_decoder:out_video_frame -> image_resize:in_image
+    image_resize:out_image -> image_transpose:in_image
+    image_transpose:out_image -> normalize:in_data
+    normalize:out_data -> car_detection:input
+    car_detection:output -> yolox_post:in_feat
+    video_decoder:out_video_frame -> image_resize_out:in_image
+    image_resize_out:out_image -> draw_car_bbox:in_image
+    yolox_post:out_data -> draw_car_bbox:in_bbox
+    draw_car_bbox:out_image -> video_out:in_video_frame
+}"""
+[flow]
+desc = "MODULENAME_multi run in SDKNAME"

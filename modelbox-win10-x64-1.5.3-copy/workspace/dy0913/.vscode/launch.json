@@ -1,0 +1,27 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: dy0913",
+      "type": "python",
+      "request": "launch",
+      "program": "D:/Desktop/modelbox-win10-x64-1.5.3/workspace/dy0913/bin/python_debug.py",
+      "console": "integratedTerminal",
+      "justMyCode": false,
+      "cwd": "D:/Desktop/modelbox-win10-x64-1.5.3/workspace/dy0913/bin",
+      "args": [
+        "D:/Desktop/modelbox-win10-x64-1.5.3/workspace/dy0913/graph/dy0913.toml"
+      ],
+      "env": {
+        "MODELBOX_DEBUG_PYTHON": "yes",
+        "Path": "D:/Desktop/modelbox-win10-x64-1.5.3/modelbox-win10-x64/../python-embed;D:/Desktop/modelbox-win10-x64-1.5.3/modelbox-win10-x64/bin;D:/Desktop/modelbox-win10-x64-1.5.3/modelbox-win10-x64/dependence/lib;${env:Path}",
+        "HILENS_APP_ROOT": "D:/Desktop/modelbox-win10-x64-1.5.3/workspace/dy0913",
+        "HILENS_DATA_DIR": "D:/Desktop/modelbox-win10-x64-1.5.3/workspace/dy0913/hilens_data_dir",
+        "HILENS_MB_SDK_PATH": "D:/Desktop/modelbox-win10-x64-1.5.3/modelbox-win10-x64",
+        "PYTHONPATH": "D:/Desktop/modelbox-win10-x64-1.5.3/workspace/dy0913/dependence/python",
+        "HILENS_MB_LOG_LEVEL": "INFO"
+      },
+      "python": "D:/Desktop/modelbox-win10-x64-1.5.3/modelbox-win10-x64/../python-embed/python.exe"
+    }
+  ]
+}

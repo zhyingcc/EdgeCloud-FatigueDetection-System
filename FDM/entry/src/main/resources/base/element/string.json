@@ -1,0 +1,64 @@
+{
+  "string": [
+    {
+      "name": "welcome_title",
+      "value": "软件使用声明"
+    },
+    {
+      "name": "welcome_span_one",
+      "value": "       请您了解，本产品为AI赋能的疲劳驾驶监测工具，您可以无需注册直接使用并浏览产品的服务和功能。"
+    },
+    {
+      "name": "welcome_span_two",
+      "value": "       为了更好的保护您的隐私和权益，我们定制了"
+    },
+    {
+      "name": "personal_privacy_protocol",
+      "value": "《敏感个人信息处理授权协议》"
+    },
+    {
+      "name": "welcome_span_three",
+      "value": "，特向说明，本软件是为"
+    },
+    {
+      "name": "team_info",
+      "value": "勇敢面对"
+    },
+    {
+      "name": "and",
+      "value": "参加"
+    },
+    {
+      "name": "welcome_span_four",
+      "value": "24年华为开发者大赛"
+    },
+    {
+      "name": "welcome_span_five",
+      "value": "而设计研发，部分展示的功能服务处于待开发状态。禁止他人盗用或套用。"
+    },
+    {
+      "name": "welcome_span_end",
+      "value": "       如您同意前述内容，请点击同意并继续使用本软件。"
+    },
+    {
+      "name": "empty",
+      "value": "empty"
+    },
+    {
+      "name": "imageviewer_image_default_width",
+      "value": "100%"
+    },
+    {
+      "name": "imageviewer_image_default_height",
+      "value": "100%"
+    },
+    {
+      "name": "defect_number",
+      "value": "请将摄像头对准驾驶员"
+    },
+    {
+      "name": "Danwei",
+      "value": " 个违规"
+    }
+  ]
+}

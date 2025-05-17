@@ -1,0 +1,1 @@
+{'result': {'duration': 25500, 'drowsy': [{'category': 2, 'periods': [19833, 23333]}]}}

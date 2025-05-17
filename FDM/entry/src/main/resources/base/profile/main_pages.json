@@ -1,0 +1,9 @@
+{
+  "src": [
+    "pages/SplashIndex",
+    "pages/MainIndex",
+    "pages/addTeskPages",
+    "pages/ResultDialog",
+    "pages/check/check"
+  ]
+}

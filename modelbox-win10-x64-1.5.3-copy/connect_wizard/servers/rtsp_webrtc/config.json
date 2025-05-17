@@ -1,0 +1,13 @@
+{
+  "server": {
+    "http_port": ":8083",
+    "ice_servers": ["stun:github.com/pion/turn"]
+  },
+  "streams": {
+	"Streaming": {
+      "on_demand": false,
+      "disable_audio": true,
+      "url": "rtsp://localhost:8554/outstream"
+    }
+  }
+}
